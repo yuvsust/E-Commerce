@@ -242,399 +242,49 @@
 
       </nav>
       <!--/.Navbar-->
-        <!-- Showing Products in Bootstrap Card -->
-          <div class="album py-5">
-            <div class="container">
 
-              <div class="row wow fadeIn">
-                  {% for product in products.all %}
-                  <div class="col-md-4">
-                      <div class="card mb-4">
-                          <div class="view overlay">
-                            <img class = "card-img-top" src={{product.product_image.url}} >
-                            <a>
-                              <div class="mask rgba-white-slight"></div>
-                            </a>
-                          </div>
+
+
+      <!-------- Showing Products in Bootstrap Card ---------->
+      <div class="album py-5">
+        <div class="container">
+
+          <div class="row wow fadeIn">
+              {% for product in products.all %}
+              <div class="col-md-4">
+                  <div class="card mb-4">
+                      <div class="view overlay">
+                      <img class = "card-img-top" src={{product.product_image.url}} >
+                      <a>
+                        <div class="mask rgba-white-slight"></div>
+                      </a>
+                      </div>
                           
-                          <div class="card-body text-center">
-                              <h5>{{ product.catagory }}</h5>
-                              <h5><strong>
-                                <a href="" class="dark-grey-text">{{ product.title }}
-                                  
-                                  {% if product.badge == "NEW" %}
-                                  <span class="badge badge-pill danger-color">{{ product.badge }}</span>
-                                  {% elif product.badge == "Best Seller"%}
-                                  <span class="badge badge-pill primary-color">{{ product.badge }}</span>
-                                  {%endif%}
-                                  
-                                  
-                                </a>
-                              </strong></h5>
-                              <h4 class="font-weight-bold blue-text">
-                                <strong>{{ product.price }} Tk</strong>
-                              </h4>
-
-                          </div>
+                      <div class="card-body text-center">
+                          <h5>{{ product.catagory }}
+                              {% if product.badge == "NEW" %}
+                              <span class="badge badge-pill danger-color">{{ product.badge }}</span>
+                              {% elif product.badge == "Best Seller"%}
+                              <span class="badge badge-pill primary-color">{{ product.badge }}</span>
+                              {%endif%}
+                          </h5>
+                          <h5><strong>
+                            <a href="" class="dark-grey-text">{{ product.title }} <a/>
+                          </h5></strong>
+                          <h5>{{ product.color }}</h5>
+                          <h4 class="font-weight-bold blue-text">
+                            <strong>{{ product.price }} Tk</strong>
+                          </h4>
                       </div>
                   </div>
-                  {% endfor %}
               </div>
-            </div>
+              {% endfor %}
           </div>
-      <!-- Section: Products v.3
-      <section class="text-center mb-4">
-      
-        Grid row 1
-        <div class="row wow fadeIn">
-      
-          Grid column 1
-          <div class="col-lg-3 col-md-6 mb-4">
-      
-            Card
-            <div class="card">
-      
-              Card image
-              <div class="view overlay">
-                <img src="{% static 'product/Fear.png' %}" class="card-img-top" />
-                <a>
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              Card image
-      
-              Card content
-              <div class="card-body text-center">
-                Category & Title
-                <a href="" class="grey-text">
-                  <h5>T-Shirt</h5>
-                </a>
-                <h5>
-                  <strong>
-                    <a href="" class="dark-grey-text">Fear Cuts Deeper Than Sowrd
-                      <span class="badge badge-pill danger-color">NEW</span>
-                    </a>
-                  </strong>
-                </h5>
-      
-                <h4 class="font-weight-bold blue-text">
-                  <strong>250 Tk</strong>
-                </h4>
-      
-              </div>
-              Card content
-      
-            </div>
-            Card
-      
-          </div>
-          Grid column
-      
-          Grid column
-          <div class="col-lg-3 col-md-6 mb-4">
-      
-            Card
-            <div class="card">
-      
-              Card image
-              <div class="view overlay">
-                <img src="{% static 'product/5PillarsWhite.jpg' %}" class="card-img-top"
-                  alt="" >
-                <a>
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              Card image
-      
-              Card content
-              <div class="card-body text-center">
-                Category & Title
-                <a href="" class="grey-text">
-                  <h5>T-Shirt</h5>
-                </a>
-                <h5>
-                  <strong>
-                    <a href="" class="dark-grey-text">5 Pillars of Islam</a>
-                  </strong>
-                </h5>
-      
-                <h4 class="font-weight-bold blue-text">
-                  <strong>250 Tk</strong>
-                </h4>
-      
-              </div>
-              Card content
-      
-            </div>
-            Card
-      
-          </div>
-          Grid column
-      
-          Grid column
-          <div class="col-lg-3 col-md-6 mb-4">
-      
-            Card
-            <div class="card">
-      
-              Card image
-              <div class="view overlay">
-                <img src="{% static 'product/IdeasNavy.jpg' %}" class="card-img-top"
-                  alt="" >
-                <a>
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              Card image
-      
-              Card content
-              <div class="card-body text-center">
-                Category & Title
-                <a href="" class="grey-text">
-                  <h5>T-Shirt</h5>
-                </a>
-                <h5>
-                  <strong>
-                    <a href="" class="dark-grey-text">Ideas Are BulletProof
-                      <span class="badge badge-pill primary-color">bestseller</span>
-                    </a>
-                  </strong>
-                </h5>
-      
-                <h4 class="font-weight-bold blue-text">
-                  <strong>250 Tk</strong>
-                </h4>
-      
-              </div>
-              Card content
-      
-            </div>
-            Card
-      
-          </div>
-          Grid column
-      
-          Fourth column
-          <div class="col-lg-3 col-md-6 mb-4">
-      
-            Card
-            <div class="card">
-      
-              Card image
-              <div class="view overlay">
-                <img src="{% static 'product/nextsemnavy.jpg' %}" class="card-img-top"
-                  alt="">
-                <a>
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              Card image
-      
-              Card content
-              <div class="card-body text-center">
-                Category & Title
-                <a href="" class="grey-text">
-                  <h5>T-Shirt</h5>
-                </a>
-                <h5>
-                  <strong>
-                    <a href="" class="dark-grey-text">Next Semester</a>
-                  </strong>
-                </h5>
-      
-                <h4 class="font-weight-bold blue-text">
-                  <strong>250 Tk</strong>
-                </h4>
-      
-              </div>
-              Card content
-      
-            </div>
-            Card
-      
-          </div>
-          Fourth column
-      
         </div>
-        Grid row
+      </div>
       
-        Grid row
-        <div class="row wow fadeIn">
-      
-          Grid column
-          <div class="col-lg-3 col-md-6 mb-4">
-      
-            Card
-            <div class="card">
-      
-              Card image
-              <div class="view overlay">
-                <img src="{% static 'product/justice.jpg' %}" class="card-img-top"
-                  alt="">
-                <a>
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              Card image
-      
-              Card content
-              <div class="card-body text-center">
-                Category & Title
-                <a href="" class="grey-text">
-                  <h5>T-Shirt</h5>
-                </a>
-                <h5>
-                  <strong>
-                    <a href="" class="dark-grey-text">Justice is Coming
-                      <span class="badge badge-pill danger-color">NEW</span>
-                    </a>
-                  </strong>
-                </h5>
-      
-                <h4 class="font-weight-bold blue-text">
-                  <strong>250 Tk</strong>
-                </h4>
-      
-              </div>
-              Card content
-      
-            </div>
-            Card
-      
-          </div>
-          Grid column
-      
-          Grid column
-          <div class="col-lg-3 col-md-6 mb-4">
-      
-            Card
-            <div class="card">
-      
-              Card image
-              <div class="view overlay">
-                <img src="{% static 'product/muslim.jpg' %}" class="card-img-top"
-                  alt="">
-                <a>
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              Card image
-      
-              Card content
-              <div class="card-body text-center">
-                Category & Title
-                <a href="" class="grey-text">
-                  <h5>T-Shirt</h5>
-                </a>
-                <h5>
-                  <strong>
-                    <a href="" class="dark-grey-text">Super Muslim</a>
-                  </strong>
-                </h5>
-      
-                <h4 class="font-weight-bold blue-text">
-                  <strong>250 Tk</strong>
-                </h4>
-      
-              </div>
-              Card content
-      
-            </div>
-            Card
-      
-          </div>
-          Grid column
-      
-          Grid column
-          <div class="col-lg-3 col-md-6 mb-4">
-      
-            Card
-            <div class="card">
-      
-              Card image
-              <div class="view overlay">
-                <img src="{% static 'product/quantam.jpg' %}" class="card-img-top"
-                  alt="">
-                <a>
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              Card image
-      
-              Card content
-              <div class="card-body text-center">
-                Category & Title
-                <a href="" class="grey-text">
-                  <h5>T-Shirt</h5>
-                </a>
-                <h5>
-                  <strong>
-                    <a href="" class="dark-grey-text">Quantam Physics
-                      <span class="badge badge-pill primary-color">bestseller</span>
-                    </a>
-                  </strong>
-                </h5>
-      
-                <h4 class="font-weight-bold blue-text">
-                  <strong>250 Tk</strong>
-                </h4>
-      
-              </div>
-              Card content
-      
-            </div>
-            Card
-      
-          </div>
-          Grid column
-      
-          Fourth column
-          <div class="col-lg-3 col-md-6 mb-4">
-      
-            Card
-            <div class="card">
-      
-              Card image
-              <div class="view overlay">
-                <img src="{% static 'product/Sylhety.jpg' %}" class="card-img-top"
-                  alt="">
-                <a>
-                  <div class="mask rgba-white-slight"></div>
-                </a>
-              </div>
-              Card image
-      
-              Card content
-              <div class="card-body text-center">
-                Category & Title
-                <a href="" class="grey-text">
-                  <h5>T-Shirt</h5>
-                </a>
-                <h5>
-                  <strong>
-                    <a href="" class="dark-grey-text">Amra Sylhety</a>
-                  </strong>
-                </h5>
-      
-                <h4 class="font-weight-bold blue-text">
-                  <strong>250 Tk</strong>
-                </h4>
-      
-              </div>
-              Card content
-      
-            </div>
-            Card
-      
-          </div>
-          Fourth column
-      
-        </div>
-        Grid row
-      
-      </section>
-      Section: Products v.3 -->
 
+      
       <!--Pagination-->
       <nav class="d-flex justify-content-center wow fadeIn">
         <ul class="pagination pg-blue">
