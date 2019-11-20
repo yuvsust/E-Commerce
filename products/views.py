@@ -4,7 +4,7 @@ from .models import product
 
 def home(request):
 	products = product.objects
-    return render(request, "home-page.html", {'products':products})
+	return render(request, "home-page.html", {'products':products})
 
 
 def checkout(request):
