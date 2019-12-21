@@ -261,17 +261,17 @@
                       </div>
                           
                       <div class="card-body text-center">
-                          <h5>{{ product.catagory }}
-                              {% if product.badge == "NEW" %}
-                              <span class="badge badge-pill danger-color">{{ product.badge }}</span>
-                              {% elif product.badge == "Best Seller"%}
-                              <span class="badge badge-pill primary-color">{{ product.badge }}</span>
+                          <h5>{{ product.get_catagory_display }}
+                              {% if product.badge == "NW" %}
+                              <span class="badge badge-pill danger-color">{{ product.get_badge_display }}</span>
+                              {% elif product.badge == "BS"%}
+                              <span class="badge badge-pill primary-color">{{ product.get_badge_display }}</span>
                               {%endif%}
                           </h5>
                           <h5><strong>
                             <a href="" class="dark-grey-text">{{ product.title }} <a/>
                           </h5></strong>
-                          <h5>{{ product.color }}</h5>
+                          <h5>{{ product.get_color_display }}</h5>
                           <h4 class="font-weight-bold blue-text">
                             <strong>{{ product.price }} Tk</strong>
                           </h4>

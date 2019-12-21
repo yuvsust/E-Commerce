@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'Jajabor.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jajabordb_again',
+        'NAME': 'jajabordb',
         'USER': 'postgres',
         'PASSWORD': 'django1234',
         'HOST': 'localhost',
-        'PORT': '5433',
+        'PORT': '5432',
     }
 }
 
